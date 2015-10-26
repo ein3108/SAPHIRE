@@ -15,7 +15,7 @@
 * Virtual House Simulation
 
 ## Releases
-* [v 0.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - initial version of Ubiquitous Accessible Home
+* [v 0.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of Ubiquitous Accessible Home
 
 ## Dependencies
 
