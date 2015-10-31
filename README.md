@@ -1,12 +1,9 @@
-# Ubiquitous Accessible Home
+# SAPHIRE: Semantic semi-Autonomous Processing Household repertoIRE
 
 ## Features
 
-* Sign Language Translation
 
 * Voice Command
-
-* Eye-Movement Tracking
 
 * Control Interface
 
@@ -15,13 +12,11 @@
 * Virtual House Simulation
 
 ## Releases
-* [v 0.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of Ubiquitous Accessible Home
+* [v 0.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of SAPHIRE
 
 ## Dependencies
 
 * [Google Glass API](https://developers.google.com/glass/develop/gdk/voice)
-
-* [Kinect for Windows SDK 2.0](https://msdn.microsoft.com/library/dn799271.aspx)
 
 
 ## Setup
@@ -33,8 +28,6 @@
 Reference Guides
 
 * [Google Glass API](https://developers.google.com/glass/develop/gdk/voice)
-
-* [Kinect for Windows SDK 2.0 Reference](https://msdn.microsoft.com/library/dn799271.aspx)
 
 ## Common issues/troubleshooting
 
@@ -65,6 +58,6 @@ Copyright (c) 2015 Hyeonsu Kang. Released under the MIT License.
 If you use this template, please provide the following attribution in the footer: 
 
 ```html
-<a href='https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11'>Ubiquitous Accessible Home</a> 
-by <a href='https://www.linkedin.com/pub/hyeonsu-kang/93/28b/684'>Hyeonsu Kang</a>.
+<a href='https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11'>SAPHIRE</a> 
+by <a href='http://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11'>Team11</a>.
 ```
