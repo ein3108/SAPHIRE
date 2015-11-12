@@ -12,10 +12,9 @@ router.get('/', function(req, res, next) {
 });
 */
 
-router.get('/simulators', function(req, res, next) {
+router.get('/simulators', function(req, res) {
   //res.render('microwaveOn');
   res.render('index', {});
-  next();
 });
 
 module.exports = router;
