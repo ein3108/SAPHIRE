@@ -9,10 +9,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+  /*
   var command = req.body.command;
   if (command == "start cooking") {
     res.render('microwaveOn');
   }
+  */
+  res.render('microwaveOn');
   next();
 });
 
