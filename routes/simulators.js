@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/simulators', function(req, res) {
-  res.render('microwaveSimulator');
+  res.render('microwaveOn');
 });
 
 module.exports = router;
