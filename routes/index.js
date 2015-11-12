@@ -7,4 +7,12 @@ router.get('/', function(req, res, next) {
   next();
 });
 
+router.post('/', function(req, res, next) {
+  var command = req.body.command;
+  if (command == "start cooking") {
+    res.render('microwaveOn');
+  }
+  next();
+});
+
 module.exports = router;
