@@ -18,6 +18,7 @@ router.post('/', function(req, res, next) {
   res.render('microwaveOn');
   res.send('success');
   next();
+  console.log('POST request arrived');
 });
 
 module.exports = router;
