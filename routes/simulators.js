@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/simulators', function(req, res, next) {
   //res.render('microwaveOn');
-  res.render('index');
+  res.render('index', {});
   next();
 });
 
