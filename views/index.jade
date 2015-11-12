@@ -12,7 +12,11 @@ block content
       table
         thead
           th Simulator Name
-          th Activate?
+          th Simulate?
         tbody
     // /SIMULATOR LIST
   // /WRAPPER
+
+  div
+    form(action="/simulators", method="post")
+      input(type="submit", value="simulate")
