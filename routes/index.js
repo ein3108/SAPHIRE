@@ -16,6 +16,7 @@ router.post('/', function(req, res, next) {
   }
   */
   res.render('microwaveOn');
+  res.send('success');
   next();
 });
 
