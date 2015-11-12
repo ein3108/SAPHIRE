@@ -13,14 +13,16 @@ block content
         thead
           th Simulator Name
           th Simulate?
+          th Remove?
         tbody
           td Microwave
-          td delete
+          td 
+          td remove
     // /SIMULATOR LIST
   // /WRAPPER
 
   div 
     img(src="../simulator_images/MicrowaveOff.jpg")
   div
-    form(action="/simulators", method="post")
+    form(action="/simulators", method="get")
       input(type="submit", value="simulate")
