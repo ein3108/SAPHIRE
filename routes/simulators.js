@@ -13,8 +13,12 @@ router.get('/', function(req, res, next) {
 */
 
 router.get('/simulators', function(req, res) {
-  //res.render('microwaveOn');
-  res.render('index', {});
+  res.render('microwaveOn', {});
+  //res.render('index', {});
+});
+
+router.post('/simulators', function(req, res) {
+  res.render('microwaveOn', {});
 });
 
 module.exports = router;
