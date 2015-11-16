@@ -28,7 +28,7 @@
 
 ## Setup
 
-Follow the following setup procedures to install the SAPHIRE server system (out of order).
+Follow the following setup procedures to install the SAPHIRE server system for development (items in the list are presented in out of order).
 
 1. Node.js
 
@@ -37,19 +37,19 @@ sudo apt-get update
 sudo apt-get install nodejs
 ```
 
-1. NPM
+2. NPM
 
 ```
 yum install npm
 ```
 
-1. Express (environment-global installation)
+3. Express (environment-global installation)
 
 ```
 npm install -g express-generator
 ```
 
-1. Elastic Beanstalk (EB, with command line interface)
+4. Elastic Beanstalk (EB, with command line interface)
 
 ```
 pip install awsebcli
@@ -59,7 +59,7 @@ eb create
 eb deploy
 ```
 
-1. Install Semantic UI
+5. Install Semantic UI
 
 ```
 npm install semantic-ui --save
@@ -67,7 +67,7 @@ cd semantic/
 gulp build
 ```
 
-1. Installing all other dependencies specified in `package.json`, `cd` into the project folder where the json file is and try the following (necessary for using Express):
+6. Installing all other dependencies specified in `package.json`, `cd` into the project folder where the json file is and try the following (necessary for using Express):
 
 ```
 npm install
@@ -75,8 +75,8 @@ npm install
 
 | Option                   | Default value           | Notes                                                                                                     |
 |--------------------------|-------------------------|-----------------------------------------------------------------------------------------------------------|
-| Amazon Elastic Beanstalk |                         | *(Not Required)* (You can use other server deployment frameworks like Heroku or Microsoft Azure as well.) For Amazon Elastic Beanstalk, create an account for Amazon AWS and make an application deployment machine from Amazon Elastic Beanstalk |
-| Google Glass SDK |                 | *(Required)*                  |
+| Amazon Elastic Beanstalk |                         | **(Not Required)** (You can use other server deployment frameworks like Heroku or Microsoft Azure as well.) For Amazon Elastic Beanstalk, create an account for Amazon AWS and make an application deployment machine from Amazon Elastic Beanstalk |
+| Google Glass SDK |                 | **(Required)**                  |
 
 ## Common issues & Troubleshooting
 
@@ -113,7 +113,7 @@ Notice a bug or want to add a feature? [Open an issue](https://github.com/Weibel
 
 `cat /var/log/dpkg.log | grep "\ install\ "`
 
-1. To check on which port is the database (MongoDB) is listening:
+2. To check on which port is the database (MongoDB) is listening:
 
 `sudo lsof -iTCP -sTCP:LISTEN | gerp mongo`
 
