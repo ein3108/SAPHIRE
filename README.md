@@ -8,10 +8,12 @@
 
 * Various Smart House Device Models
 
-* Virtual Simulation
+* Visual Simulation
+
+* Google Glass App for User Notifications
 
 ## Releases
-* [v 1.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of SAPHIRE includes a smart microwave model
+* [v 1.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of SAPHIRE includes a smart microwave model and a simple Google Glass App that understands pre-defined user voice commands
 
 ## Dependencies and Reference guides
 
@@ -74,7 +76,7 @@ npm install
 | Option                   | Default value           | Notes                                                                                                     |
 |--------------------------|-------------------------|-----------------------------------------------------------------------------------------------------------|
 | Amazon Elastic Beanstalk |                         | *(Not Required)* (You can use other server deployment frameworks like Heroku or Microsoft Azure as well.) For Amazon Elastic Beanstalk, create an account for Amazon AWS and make an application deployment machine from Amazon Elastic Beanstalk |
-| Google Glass SDK |                 |                  |
+| Google Glass SDK |                 | *(Required)*                  |
 
 ## Common issues & Troubleshooting
 
