@@ -1,0 +1,22 @@
+html
+  head
+    script.
+      function turnOn()
+      {
+        var img = document.getElementById("image");
+        img.src="../simulator_images/MicrowaveOn.jpg";
+        return false;
+      }
+      function turnOff()
+      {
+        var img = document.getElementById("image");
+        img.src="../simulator_images/MicrowaveOff.jpg";
+        return false;
+      }
+  body
+    img#image(src='../simulator_images/MicrowaveOff.jpg')
+    br
+    br
+    br
+    button#clickme(onclick='turnOn();') Turn On Microwave
+    button#clickme(onclick='turnOff();') Turn Off Microwave
