@@ -82,7 +82,7 @@
 
 1. If you're building this server system on top of a virtual machine or Amazon EC2 where the amount of free disk space is limited, there's a chance that MongoDB will fail to execute with the following message:
 
-* ERROR: Insufficient free space for journal files *
+  *ERROR: Insufficient free space for journal files*
 
 In order to get around this, unless you can add extra disk space to your system, try to configure MongoDB differently with 
   ```
