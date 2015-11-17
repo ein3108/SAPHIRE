@@ -99,12 +99,17 @@ a {
 
 #addSimulator {
   position:absolute;
-  top:225px; left:350px;
+  top:225px; left:550px;
+}
+
+#addSimulator button {
+  position:absolute;
+  top:250px; left:550px;
 }
 
 #addSimulator fieldset {
   border:2px;
   margin:2px;
   position:absolute;
-  top:250px; left:350px;
+  top:250px; left:550px;
 }
