@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/simulatorlist', function(req, res, next) {
   var db = req.db;
-  var collection = db.get('appliancelist');
+  var collection = db.get('simulatorlist');
   collection.find({}, {}, function(e, docs) {
     res.json(docs);
   });
@@ -32,7 +32,7 @@ router.get('/microwave', function(req, res) {
   res.render('microwaveInit');
 });
 
-router.post('/mivrowave', function(req, res) {
+router.post('/microwave', function(req, res) {
   var state = req.body.state;
   if (state === 'init') {
     res.render('microwaveInit');

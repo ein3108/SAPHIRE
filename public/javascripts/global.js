@@ -20,7 +20,7 @@ function populateTable() {
     $.each(data, function() {
       tableContent += '<tr>';
       tableContent += '<td><a href="#" class="linkshowinfo" ref="' + this.simulatorname + '">' + this.simulatorname + '</a></td>';
-      tableContent += '<td><a href="simulators/' + this.appliancename + '">simulate</a></td>';
+      tableContent += '<td><a href="simulators/' + this.simulatorname + '">simulate</a></td>';
       tableContent += '<td><a href="#" class="linkdeletesimulator" ref="' + this._id + '">remove</a></td>';
       tableContent += '</tr>';
     });
@@ -66,7 +66,7 @@ function addSimulator(event) {
     }).done(function(res) {
       if (res.msg === '') {
         // initialize with the field placeholders
-        $('#addSimulator fieldseet input').val('');
+        $('#addSimulator fieldset input').val('');
         populateTable();
       } else {
         alert('Error: ' + res.msg);
@@ -95,9 +95,9 @@ function deleteSimulator(event) {
       }
       populateTable();
     }).fail(function(res) {
-    };
+      alert('Server Unavailable');
+    });
   } else {
     return false;
   }
 };
-    
