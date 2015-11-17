@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  #simImageContainer
+    img(src='/images/microwaveOn.jpg')
+    form(action='/simulators/microwave', method='post')
+      input(type='hidden', name='state', value='init')
+      input(type='submit', value='Stop Simulation')
+    form(action='/', method='get')
+      input(type='submit', value='Back to the simulator list')

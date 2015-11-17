@@ -6,12 +6,14 @@ $(document).ready(function() {
 
 function populateTable() {
   var tableContent = '';
-  $.getJSON('/simulators', function(data) {
+  // jQuery Ajax from JSON
+  $.getJSON('/simulators/simulatorlist', function(data) {
     $.each(data, function() {
       tableContent += '<tr>';
       tableContent += '<td>' + this.appliancename + '</td>';
-      tableContent += '<td><a href="#">simulate</a></td>';
-      tableContent += '<td><a href="#">delete</a></td>';
+      tableContent += '<td><a href="#">Information</a></td>';
+      tableContent += '<td><a href="#simulators/' + this.appliancename + '">simulate</a></td>';
+      tableContent += '<td><a href="#">remove</a></td>';
       tableContent += '</tr>';
     });
 

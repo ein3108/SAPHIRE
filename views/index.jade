@@ -1,28 +1,21 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title} simulator
+  #imgContainer
+    img(src='/images/kitchen.jpg')
 
   #wrapper
-
+    h1= title + version
+    p Welcome to the #{title} simulator
     h2 Simulator List
 
     #simulatorList
       table
         thead
           th Simulator Name
+          th Information
           th Simulate?
           th Remove?
         tbody
-          td Microwave
-          td 
-          td remove
     // /SIMULATOR LIST
   // /WRAPPER
-
-  div 
-    img(src="/images/microwaveOff.jpg")
-  div
-    form(action="/", method="post")
-      input(type="submit", value="simulate")

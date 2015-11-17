@@ -9,8 +9,10 @@ a {
 
 
 #wrapper {
-  padding-left:312px;
-  position:relative;
+  padding-left:10px;
+  display:block;
+  position:absolute;
+  top:50px; left:50px;
 }
 
 #simulatorList {
@@ -47,6 +49,48 @@ a {
   padding:15px;
   border:1px solid #CCC;
   background:rgba(80,120,255,0.05);
+}
+
+#imgContainer {
+  position:relative;
+  overflow:hidden;
+}
+
+#imgContainer h1 {
+  padding:200px;
+  position:relative;
+  z-index:2;
+}
+
+#imgContainer img {
+  content:' ';
+  top:0; left:0;
+  width:75%;
+  height:auto;
+  z-index:1;
+  opacity:0.6;
+  background-repeat:no-repeat;
+  background-position:50% 0;
+  -ms-background-size:cover;
+  -o-background-size:cover;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
+}
+
+#simImgContainer img {
+  content:' ';
+  top:0; left:0;
+  width:50%;
+  height:auto;
+  z-index:1;
+  background-repeat:no-repeat;
+  background-position:50% 0;
+  -ms-background-size:cover;
+  -o-background-size:cover;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
 }
 
 fieldset {
