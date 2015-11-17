@@ -16,7 +16,7 @@
 
 * Database Connetion with MongoDB
 
-* The SAPHIRE Server System and Visualization & Tracking of Household Resources
+* The SAPHIRE Server System and Visualization & Tracking of Household Resources (To be added in the next version)
 
 ## Releases
 * [v 1.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of SAPHIRE includes a smart microwave model and a simple Google Glass App that understands pre-defined user voice commands
