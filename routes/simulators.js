@@ -10,6 +10,23 @@ router.get('/simulatorlist', function(req, res, next) {
   });
 });
 
+router.post('/addSimulator', function(req, res) {
+  var db = req.db;
+  var collection = db.get('simulatorlist');
+  collection.insert(req.body, function(err, result) {
+    res.send((err === null) ? { msg:'' } : { msg:err });
+  });
+});
+
+router.delete('/deleteSimulator', function(req, res) {
+  var db = req.db;
+  var collection = db.get('simulatorlist');
+  var simToDelete = req.body.id;
+  collection.remove({ '_id':simToDelete }, function(err) {
+    res.send((err === null) ? { msg:'' } : { msg:'Error ' + err });
+  });
+});
+
 // How to pass 'microwave' from the database?
 router.get('/microwave', function(req, res) {
   res.render('microwaveInit');

@@ -7,15 +7,37 @@ block content
   #wrapper
     h1= title + version
     p Welcome to the #{title} simulator
+    #simulatorInfo
+      h2 Simulator Information
+      p
+        strong Name:
+          <span id='simulatorInfoName'></span>
+        br
+        strong Properties:
+          <span id='simulatorInfoProp'></span>
+        br
+        strong Opertaion:
+          <span id='simulatorInfoOp'></span>
+        br
+        strong Location:
+          <span id='simulatorInfoLoc'></span>
     h2 Simulator List
-
     #simulatorList
       table
         thead
-          th Simulator Name
           th Information
           th Simulate?
           th Remove?
         tbody
-    // /SIMULATOR LIST
-  // /WRAPPER
+    #addSimulator
+      h2 Add Simulator
+      fieldset
+        input#inputSimulatorName(type='text', placeholder='simulator name')
+        br
+        input#inputSimulatorProp(type='text', placeholder='simulator properties')
+        br
+        input#inputSimulatorOp(type='text', placeholder='simulator operations')
+        br
+        input#inputSimulatorLoc(type='text', placeholder='simulator location')
+        br
+        input#btnAddSimulator(type='button', value='Add Simulator')

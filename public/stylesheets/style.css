@@ -41,9 +41,9 @@ a {
 }
 
 #simulatorInfo {
-  width:250px;
+  width:350px;
   position:absolute;
-  top:0; left:0;
+  top:50px; left:550px;
 }
 #simulatorInfo p {
   padding:15px;
@@ -93,7 +93,14 @@ a {
   background-size:cover;
 }
 
-fieldset {
-  border:0;
-  padding:0; margin:0;
+#addSimulator {
+  position:absolute;
+  top:225px; left:550px;
+}
+
+#addSimulator fieldset {
+  border:2px;
+  margin:2px;
+  position:absolute;
+  top:250px; left:550px;
 }
