@@ -4,7 +4,7 @@
 
 * Natural Language Voice Command Interpreter (To be added in the next version)
 
-  * API for Smart House Device Control & POC with Philips HUE (To be added in the next version)
+* API for Smart House Device Control & POC with Philips HUE (To be added in the next version)
 
 * Various Smart House Device Models & Visual Simulations
 
@@ -34,49 +34,49 @@
 
 ## Setup
 
-Follow the following setup procedures to install the SAPHIRE server system for development (items in the list are presented in out of order).
+  Follow the following setup procedures to install the SAPHIRE server system for development (items in the list are presented in out of order).
 
 1. Node.js
   ```
-    sudo apt-get update
-      sudo apt-get install nodejs
-        ```
+  sudo apt-get update
+  sudo apt-get install nodejs
+  ```
 
-        1. NPM
-          ```
-            yum install npm
-              ```
+1. NPM
+  ```
+  yum install npm
+  ```
 
-              1. Express (environment-global installation)
-                ```
-                  npm install -g express-generator
-                    ```
+1. Express (environment-global installation)
+  ```
+  npm install -g express-generator
+  ```
 
-                    1. Elastic Beanstalk (EB, with command line interface)
-                      ```
-                        pip install awsebcli
-                          cd /to/your/project/folder & eb init
-                            eb create
-                              (developement)
-                                eb deploy
-                                  ```
+1. Elastic Beanstalk (EB, with command line interface)
+  ```
+  pip install awsebcli
+  cd /to/your/project/folder & eb init
+  eb create
+(developement)
+  eb deploy
+  ```
 
-                                  1. Install Semantic UI
-                                    ```
-                                      npm install semantic-ui --save
-                                        cd semantic/
-                                          gulp build
-                                            ```
+1. Install Semantic UI
+  ```
+  npm install semantic-ui --save
+  cd semantic/
+  gulp build
+  ```
 
-                                            1. Installing all other dependencies specified in `package.json`, `cd` into the project folder where the json file is and try the following (necessary for using Express):
-                                              ```
-                                                npm install
-                                                  ```
+1. Installing all other dependencies specified in `package.json`, `cd` into the project folder where the json file is and try the following (necessary for using Express):
+  ```
+  npm install
+  ```
 
-                                                  | Option                   | Default value           | Notes                                                                                                     |
-                                                  |--------------------------|-------------------------|-----------------------------------------------------------------------------------------------------------|
-                                                  | Amazon Elastic Beanstalk |                         | **(Not Required)** (You can use other server deployment frameworks like Heroku or Microsoft Azure as well.) For Amazon Elastic Beanstalk, create an account for Amazon AWS and make an application deployment machine from Amazon Elastic Beanstalk |
-                                                  | Google Glass SDK |                 | **(Required)**                  |
+| Option                   | Default value           | Notes                                                                                                     |
+|--------------------------|-------------------------|-----------------------------------------------------------------------------------------------------------|
+| Amazon Elastic Beanstalk |                         | **(Not Required)** (You can use other server deployment frameworks like Heroku or Microsoft Azure as well.) For Amazon Elastic Beanstalk, create an account for Amazon AWS and make an application deployment machine from Amazon Elastic Beanstalk |
+| Google Glass SDK |                 | **(Required)**                  |
 
 ## Common issues & Troubleshooting
 
@@ -86,18 +86,18 @@ Follow the following setup procedures to install the SAPHIRE server system for d
 
 In order to get around this, unless you can add extra disk space to your system, try to configure MongoDB differently with 
   ```
-    storage:
-        smallFiles: true
-          ```
+  storage:
+    smallFiles: true
+  ```
 
-          Then execute `mongod` with the new configuration file: `mongod -f /etc/mongodb.conf`
+Then execute `mongod` with the new configuration file: `mongod -f /etc/mongodb.conf`
 
-          Providing a command line option is also possible, for example,
-            ```
-              mongod --dbpath /data/db --smallfiles
-                ```
+Providing a command line option is also possible, for example,
+  ```
+  mongod --dbpath /data/db --smallfiles
+  ```
 
-                For more information, please visit [MongoDB Documentation](https://docs.mongodb.org/manual/reference/configuration-options/#storage.mmapv1.smallFiles)
+For more information, please visit [MongoDB Documentation](https://docs.mongodb.org/manual/reference/configuration-options/#storage.mmapv1.smallFiles)
 
 ## Bug fixes and pull requests
 
@@ -111,23 +111,23 @@ Notice a bug or want to add a feature? [Open an issue](https://github.com/Weibel
 
 1. To view a list of recently installed packages (via all different kinds of installation methods e.g. apt-get, yum, etc)
   ```
-    cat /var/log/dpkg.log | grep "\ install\ "
-      ```
+  cat /var/log/dpkg.log | grep "\ install\ "
+  ```
 
-      2. To check on which port is the database (MongoDB) is listening:
-        ```
-          sudo lsof -iTCP -sTCP:LISTEN | gerp mongo
-            ```
+1. To check on which port is the database (MongoDB) is listening:
+  ```
+  sudo lsof -iTCP -sTCP:LISTEN | gerp mongo
+  ```
 
 ## Contributors 
 
-* [Hyeonsu Kang](https://www.linkedin.com/pub/hyeonsu-kang/93/28b/684)
+  * [Hyeonsu Kang](https://www.linkedin.com/pub/hyeonsu-kang/93/28b/684)
 
-* [Chen-hao Liao](https://github.com/Chenhaoxd)
+  * [Chen-hao Liao](https://github.com/Chenhaoxd)
 
-* [Dewey Martin Nguwen](https://github.com/martininguyen)
+  * [Dewey Martin Nguwen](https://github.com/martininguyen)
 
-* [Pargat Singh](https://github.com/gotsingh)
+  * [Pargat Singh](https://github.com/gotsingh)
 
 ## Copyright and attribution
 
@@ -135,8 +135,8 @@ Copyright (c) 2015 Hyeonsu Kang. Released under the MIT License.
 
 If you use this template, please provide the following attribution in the footer: 
 
-```html
-<a href='https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11'>SAPHIRE</a> 
-by <a href='http://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11'>Team11</a>.
-```
+  ```html
+  <a href='https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11'>SAPHIRE</a> 
+  by <a href='http://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11'>Team11</a>.
+  ```
 
