@@ -19,9 +19,9 @@ function populateTable() {
     simulatorData = data;
     $.each(data, function() {
       tableContent += '<tr>';
-      tableContent += '<td><a href="#" class="linkshowinfo" ref="' + this.simulatorname + '">' + this.simulatorname + '</a></td>';
+      tableContent += '<td><a href="#" class="linkshowinfo" rel="' + this.simulatorname + '">' + this.simulatorname + '</a></td>';
       tableContent += '<td><a href="simulators/' + this.simulatorname + '">simulate</a></td>';
-      tableContent += '<td><a href="#" class="linkdeletesimulator" ref="' + this._id + '">remove</a></td>';
+      tableContent += '<td><a href="#" class="linkdeletesimulator" rel="' + this._id + '">remove</a></td>';
       tableContent += '</tr>';
     });
 
@@ -94,7 +94,7 @@ function deleteSimulator(event) {
         alert('Error: ' + res.msg);
       }
       populateTable();
-    }).fail(function(res) {
+    }).fail(function() {
       alert('Server Unavailable');
     });
   } else {
