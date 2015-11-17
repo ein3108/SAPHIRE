@@ -2,15 +2,21 @@
 
 ## Features
 
-* Natural Language Voice Command Interpreter (To be added)
+* Natural Language Voice Command Interpreter (To be added in the next version)
 
-* API for Smart House Device Control
+* API for Smart House Device Control & POC with Philips HUE (To be added in the next version)
 
-* Various Smart House Device Models
+* Various Smart House Device Models & Visual Simulations
 
-* Visual Simulation
+* Google Glass Application for QR Code Reading
 
-* Google Glass App for User Notifications
+* Google Glass Application for User Interaction & Notifications
+
+* A Fine-grained Object-Device-Instruction (ODI) Model
+
+* Database Connection with MongoDb
+
+* The SAPHIRE Server System and Visualization & Tracking of Household Resources (To be added in the next version)
 
 ## Releases
 * [v 1.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of SAPHIRE includes a smart microwave model and a simple Google Glass App that understands pre-defined user voice commands
