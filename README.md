@@ -30,10 +30,11 @@
 
 Follow the following setup procedures to install the SAPHIRE server system for development (items in the list are presented in out of order).
 
-1. Node.js
+1. Node.js & node-legacy
   ```
   sudo apt-get update
   sudo apt-get install nodejs
+  sudo apt-get install nodejs-legacy
   ```
 
 1. NPM
