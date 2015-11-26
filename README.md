@@ -41,13 +41,8 @@ Follow the following setup procedures to install the SAPHIRE server system for d
   yum install npm
   ```
 
-1. Express & express-generator (environment-global installation)
-  ```
-  sudo apt-get install node-express
-  ```
-  
-  and
-  
+1. Express-generator (environment-global installation)
+
   ```
   npm install -g express-generator
   ```
