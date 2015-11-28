@@ -36,10 +36,11 @@
 
 Follow the following setup procedures to install the SAPHIRE server system for development (items in the list are presented in out of order).
 
-1. Node.js
+1. Node.js & node-legacy
   ```
   sudo apt-get update
   sudo apt-get install nodejs
+  sudo apt-get install nodejs-legacy
   ```
 
 1. NPM
@@ -47,7 +48,8 @@ Follow the following setup procedures to install the SAPHIRE server system for d
   yum install npm
   ```
 
-1. Express (environment-global installation)
+1. Express-generator (environment-global installation)
+
   ```
   npm install -g express-generator
   ```
