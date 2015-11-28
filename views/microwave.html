@@ -23,13 +23,12 @@
 
       socket.on('broad', function(data) {
         document.getElementById('state').innerHTML = data;
-        if (data == '\"microwave:init\"') {
+        if (data == 'microwave:init') {
           socket.emit('microwave state', 'init');
           $('#simImgContainer').attr('src', '/images/microwaveOff.jpg');
-        } else if (data == '\"microwave:start\"') {
+        } else if (data == 'microwave:start') {
           socket.emit('microwave state', 'start');
           $('#simImgContainer').attr('src', '/images/microwaveOn.jpg');
-          document.getElementById('state').innerHTML = data;
         } else {
           socket.emit('microwave state', data);
         }
