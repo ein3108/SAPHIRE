@@ -82,22 +82,29 @@ Follow the following setup procedures to install the SAPHIRE server system for d
 
 1. If you're building this server system on top of a virtual machine or Amazon EC2 where the amount of free disk space is limited, there's a chance that MongoDB will fail to execute with the following message:
 
-* ERROR: Insufficient free space for journal files *
+  * ERROR: Insufficient free space for journal files *
 
-In order to get around this, unless you can add extra disk space to your system, try to configure MongoDB differently with 
+  In order to get around this, unless you can add extra disk space to your system, try to configure MongoDB differently with 
   ```
   storage:
     smallFiles: true
   ```
 
-Then execute `mongod` with the new configuration file: `mongod -f /etc/mongodb.conf`
+  Then execute `mongod` with the new configuration file: `mongod -f /etc/mongodb.conf`
 
-Providing a command line option is also possible, for example,
+  Providing a command line option is also possible, for example,
   ```
   mongod --dbpath /data/db --smallfiles
   ```
 
-For more information, please visit [MongoDB Documentation](https://docs.mongodb.org/manual/reference/configuration-options/#storage.mmapv1.smallFiles)
+  For more information, please visit [MongoDB Documentation](https://docs.mongodb.org/manual/reference/configuration-options/#storage.mmapv1.smallFiles)
+
+1. Can't connect to Google Glass using ADB on Windows
+  If Glass is not listed in the connected device panel, please try the following:
+  1. Use task manager to kill adb.exe and run adb.exe again.
+  1. Instal the Android Composite ADB Interface for the detected *unknown* device:
+    - Go to Control Panel -> System -> Device Manager -> Other Devices -> Glass 1 -> Update Driver. Then browse your computer to locate the android_winusb.inf file under the adt-bundle-windows-*\sdk\extras\google\usb_driver
+
 
 ## Bug fixes and pull requests
 

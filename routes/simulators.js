@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
 
 /* GET users listing. */
 router.get('/simulatorlist', function(req, res, next) {
@@ -8,6 +12,10 @@ router.get('/simulatorlist', function(req, res, next) {
   collection.find({}, {}, function(e, docs) {
     res.json(docs);
   });
+});
+
+router.get('/microwave', function(req, res) {
+  res.render('microwave');
 });
 
 router.post('/addSimulator', function(req, res) {
@@ -27,20 +35,13 @@ router.delete('/deleteSimulator', function(req, res) {
   });
 });
 
-// How to pass 'microwave' from the database?
-router.get('/microwave', function(req, res) {
-  res.render('microwaveInit');
+io.on('connection', function(socket) {
+  console.log('a client connected');
+  socket.on('simulate', function(data) {
+    io.emit('broad', data);
+  });
 });
 
-router.post('/microwave', function(req, res) {
-  var state = req.body.state;
-  if (state === 'init') {
-    res.render('microwaveInit');
-  } else if (state === 'start') {
-    res.render('microwaveStart');
-  } else {
-  }
-  res.end("success");
-});
+http.listen(4200);
 
 module.exports = router;

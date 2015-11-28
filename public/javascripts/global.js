@@ -25,7 +25,7 @@ function populateTable() {
       tableContent += '</tr>';
     });
 
-    $('#simulatorList table tbody').html(tableContent);
+    $('#tbody').html(tableContent);
   });
 };
 
@@ -74,6 +74,8 @@ function addSimulator(event) {
     }).fail(function() {
       alert('Server Unavailable');
     });
+  } else {
+    alert('Please fill up all of the cells in the table');
   }
 };
 

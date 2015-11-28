@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SAPHIRE</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  </head>
+  <body>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="/javascripts/global.js"></script>
+  <div id="imgContainer">
+    <img src="/images/kitchen.jpg"/>
+  </div>
+  <div id="wrapper">
+    <h1>SAPHIRE Simulator</h1>
+    <p>Welcome to the simulator</p>
+    <div id="simulatorInfo">
+      <h2>Simulator Information</h2>
+      <p>
+        <strong>Name:</strong>
+        <span id='simulatorInfoName'></span>
+        <br>
+        <strong>Properties:</strong>
+        <span id='simulatorInfoProp'></span>
+        <br>
+        <strong>Operataion:</strong>
+        <span id='simulatorInfoOp'></span>
+        <br>
+        <strong>Location:</strong>
+        <span id='simulatorInfoLoc'></span>
+      </p>
+      <h2>Add Simulator</h2>
+    </div>
+    <div id="addSimulator">
+      <fieldset>
+        <input id="inputSimulatorName" type="text" placeholder="simulator name"/>
+        <br>
+        <input id="inputSimulatorProp" type="text" placeholder="simulator properties"/>
+        <br>
+        <input id="inputSimulatorOp" type="text" placeholder="simulator operations"/>
+        <br>
+        <input id="inputSimulatorLoc" type="text" placeholder="simulator location"/>
+        <br>
+      </fieldset>
+        <input type="button" id="button" value="Add Simulator">
+    </div>
+    <h2>Simulator List</h2>
+    <div id="simulatorList">
+      <table id="table">
+        <thead>
+          <th>Information</th>
+          <th>Simulate?</th>
+          <th>Remove?</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+  </body>
+</html>
