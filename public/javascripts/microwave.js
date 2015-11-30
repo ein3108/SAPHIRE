@@ -1,5 +1,5 @@
-//var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.com:4200');
-var socket = io.connect('http://127.0.0.1:4200');
+var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.com:4200');
+//var socket = io.connect('http://127.0.0.1:4200');
 
 socket.on('connect', function(data) {
   socket.emit('join', 'microwave');
