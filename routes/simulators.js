@@ -1,12 +1,8 @@
 var express = require('express');
 var router = express.Router();
-//var app = require('express')();
 var app = express();
-//var app = express().createServer();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-//var ip = require('ip').address();
-
 
 /* GET users listing. */
 router.get('/simulatorlist', function(req, res, next) {
@@ -19,6 +15,14 @@ router.get('/simulatorlist', function(req, res, next) {
 
 router.get('/microwave', function(req, res) {
   res.render('microwave');
+});
+
+router.get('/refrigerator', function(req, res) {
+  res.render('refrigerator');
+});
+
+router.get('/washer', function(req, res) {
+  res.render('washer');
 });
 
 router.post('/addSimulator', function(req, res) {
@@ -39,9 +43,18 @@ router.delete('/deleteSimulator', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  console.log('a client connected');
+  console.log('on.connection: a client connected');
+
+  socket.on('join', function(data) {
+    console.log('on.join: a ' + data + ' connected');
+  });
+
   socket.on('simulate', function(data) {
     io.emit('broad', data);
+  });
+
+  socket.on('finish', function(data) {
+    console.log('finishing up the simulation:', data);
   });
 });
 

@@ -85,8 +85,8 @@ a {
 #simImgContainer img {
   content:' ';
   top:0; left:0;
-  width:50%;
-  height:100%;
+  width:75%;
+  height:auto;
   z-index:1;
   background-repeat:no-repeat;
   background-position:50% 0;

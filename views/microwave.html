@@ -4,42 +4,17 @@
     <title>Microwave</title>
   </head>
   <body>
-    <div id="state">state:init</div>
-    <img id="simImgContainer" src="/images/microwaveOff.jpg"/>
-    <form id="hiddenState" id="simBtn" action="/simulators/microwave" method="post">
-      <input type="hidden" name="state" value="start"/>
-      <input type="submit" value="Start Simulation"/>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/javascripts/microwave.js"></script>
+    <!-- <div id="state">microwave:init</div> -->
+    <img id="simImgContainer" src="/images/microwaveOff.jpg" width="480px"/>
+    <form>
+      <input id="hiddenState" type="hidden" value="microwave:start"/>
+      <input id="simBtn" type="button" value="Start the microwave" onclick="simulate();"/>
     </form>
     <form action="/" method="get">
       <input type="submit" value="Back to the simulator list"/>
     </form>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.com:4200');
-      socket.on('connect', function(data) {
-        socket.emit('join', 'client handshake');
-      });
-
-      socket.on('broad', function(data) {
-        document.getElementById('state').innerHTML = data;
-        if (data == 'microwave:init') {
-          socket.emit('microwave state', 'init');
-          $('#simImgContainer').attr('src', '/images/microwaveOff.jpg');
-        } else if (data == 'microwave:start') {
-          socket.emit('microwave state', 'start');
-          $('#simImgContainer').attr('src', '/images/microwaveOn.jpg');
-        } else {
-          socket.emit('microwave state', data);
-        }
-        socket.emit('finish', 'Simulator state changed');
-      });
-      
-      $('#simBtn').submit(function(e) {
-        e.preventDefault();
-        var state = $('#hiddenState').val();
-        socket.emit('simulate', state);
-      });
-    </script>
   </body>
 </html>

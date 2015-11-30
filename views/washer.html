@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Washer</title>
+  </head>
+  <body>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/javascripts/washer.js"></script>
+    <!-- <div id="state">Washer:closed</div> -->
+    <img id="simImgContainer" src="/images/washerEmptyClosed.png" width="480px"/>
+    <form>
+      <input id="hiddenState1" type="hidden" value="washer:emptyClosed"/>
+      <input id="hiddenState2" type="hidden" value="washer:emptyOpened"/>
+      <input id="simBtn1" type="button" value="" onclick="simulate1();"/>
+      <input id="simBtn2" type="button" value="Open the door" onclick="simulate2();"/>
+    </form>
+    <form action="/" method="get">
+      <input type="submit" value="Back to the simulator list"/>
+    </form>
+  </body>
+</html>
