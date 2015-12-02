@@ -25,6 +25,10 @@ router.get('/washer', function(req, res) {
   res.render('washer');
 });
 
+router.get('/irobot', function(req, res) {
+  res.render('irobot');
+});
+
 router.post('/addSimulator', function(req, res) {
   var db = req.db;
   var collection = db.get('simulatorlist');
