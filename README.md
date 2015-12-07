@@ -12,9 +12,11 @@
 
 * Google Glass Application for User Interaction & Notifications
 
-* A Fine-grained Object-Device-Instruction (ODI) Model
+* An Object-Device-Instruction (ODI) Model
 
 * Database Connection with MongoDb
+
+* Connecting the iRobot to SAPHIRE
 
 * The SAPHIRE Server System and Visualization & Tracking of Household Resources (To be added in the next version)
 
