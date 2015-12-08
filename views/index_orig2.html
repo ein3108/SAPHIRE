@@ -67,23 +67,26 @@
     </header>
 
     <section class="bg_simulation" id="simulators">
-	 <body>
-	<div class="container">
+	  <body>
+	    <div class="container">
+      </div>
 
+      <form>
+        <input id="microwaveHiddenState" type="hidden" value="microwave:start"/>
+        <input id="refrigeratorHiddenState" type="hidden" value="fridge:bacon"/>
+        <input id="washerHiddenState" type="hidden" value="washer:start"/>
+        <input id="lightHiddenState" type="hidden" value="light:start"/>
+        <input id="irobotHiddenState" type="hidden" value="roomba:start"/>
+        <input id="simBtn1" type="button" value="Start the microwave" onclick="simulate();"/>
+        <input id="simBtn2" type="button" value="Search the refrigerator" onclick="simulate();"/>
+        <input id="simBtn3" type="button" value="Start the washer" onclick="simulate();"/>
+        <input id="simBtn4" type="button" value="Turn on the light" onclick="simulate();"/>
+        <input id="simBtn5" type="button" value="Start the roomba" onclick="simulate();"/>
+    </body>
     </section>
+  <!-- simulator js -->
+  <script src="javascripts/simulators.js"></script>
 
-    <section class="bg_microwave" id="microwave">
-
-    </section>
-
-    <section class="bg_washer" id="washer">
-       
-    </section>	
-	
-	<section class="bg_refridgerator" id="refridgerator">
-	
-  </section>
-	
   <!-- jQuery -->
   <script src="javascripts/jquery.js"></script>
 
@@ -97,6 +100,8 @@
 
   <!-- Custom Theme JavaScript -->
   <script src="javascripts/saphire.js"></script>
-
+  
+  <!-- Socket.io -->
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 </body>
 </html>
