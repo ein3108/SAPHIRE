@@ -3,9 +3,9 @@ var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.co
 
 // The timeout value has to be pulled from the database
 var cookTime = 3000;
-//var HOST = 'ws://192.168.0.23:';
+var HOST = 'ws://192.168.43.187:';
 //var HOST = 'ws://172.20.10.5:';
-var HOST = 'ws://192.168.7.2:';
+//var HOST = 'ws://192.168.7.2:';
 var PORT = 2222;
 
 socket.on('connect', function(data) {
@@ -16,8 +16,7 @@ socket.on('broad', function(data) {
   if (data === 'microwave:init') {
     $('#microwaveImg').prop('src', '/images/Microwave.jpg');
 //    $('#simBtn1').prop('value', 'Start the microwave');
-    $('#microwaveHiddenState').prop('value', '"microwave:start"');
-
+    $('#microwaveHiddenState').prop('value', '\"microwave:start"');
     socket.emit('finish', 'microwave:done');
   } else if (data === '\"microwave:start\"') {
     $('#microwaveImg').prop('src', '/images/microwaveOn.jpg');
@@ -32,7 +31,7 @@ socket.on('broad', function(data) {
   } else if (data === 'fridge:bacon') { 
     // search the database and send the response to GlassHouse
     socket.emit('finish', 'bacon:3');
-  } else if (data === 'light:stop') { 
+  } else if (data === '\"light:stop\"') { 
     $('#lightImg').prop('src', '/images/TableLamp.jpg');
    // $('#simBtn4').prop('value', 'Turn on the light');
     $('#lightHiddenState').prop('value', '"light:start"');
