@@ -19,7 +19,7 @@ socket.on('broad', function(data) {
     $('#microwaveHiddenState').prop('value', 'microwave:start');
 
     socket.emit('finish', 'microwave:done');
-  } else if (data === 'microwave:start') {
+  } else if (data === '\"microwave:start\"') {
     $('#microwaveImg').prop('src', '/images/microwaveOn.jpg');
   //  $('#simBtn1').prop('value', 'Stop the microwave');
     $('#microwaveHiddenState').prop('value', 'microwave:init');
