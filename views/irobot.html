@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>irobot</title>
+  </head>
+  <body>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/javascripts/irobot.js"></script>
+    <div id="log">init</div>
+    <form>
+      <input id="hiddenState" type="hidden" value="irobot:start"/>
+      <input id="simBtn" type="button" value="Start the irobot" onclick="simulate();"/>
+    </form>
+    <form action="/" method="get">
+      <input type="submit" value="Back to the simulator list"/>
+    </form>
+  </body>
+</html>
