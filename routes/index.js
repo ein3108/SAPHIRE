@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
-//var ip = require('ip').address();
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-//
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'SAPHIRE', version: '1.0' });

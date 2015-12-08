@@ -28,14 +28,12 @@
 </head>
 
 <body id="page-top">
-    <!-- simulators.js -->
-    <script src="javascripts/simulators.js"></script>
-
     <!-- Socket.io -->
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-
     <!-- jQuery -->
     <script src="javascripts/jquery.js"></script>
+    <!-- simulators.js -->
+    <script src="javascripts/simulators.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="javascripts/bootstrap.min.js"></script>
@@ -92,12 +90,11 @@
 				<div class="TOP">
           <form>
             <input id="microwaveHiddenState" type="hidden" value="microwave:start"/>
-            <input id="lightHiddenState" type="hidden" value="light:stop"/>
-            <input id="irobotHiddenState" type="hidden" value="roomba:stop"/>
-            <input id="washerHiddenState" type="hidden" value="washer:stop"/>
+            <input id="lightHiddenState" type="hidden" value="light:start"/>
+            <input id="irobotHiddenState" type="hidden" value="roomba:start"/>
+            <input id="washerHiddenState" type="hidden" value="washer:start"/>
             <input id="refrigeratorHiddenState" type="hidden" value="fridge:bacon"/>
-            <button type="button" class="btn btn-default" id="simBtn1" value="Start the microwave"/>
-
+            <input id="simBtn1" type="button" value="Start the microwave" onclick="simulateMicrowave();"/>
             <input id="simBtn2" type="button" value="Search the refrigerator" onclick="simulateRefrigerator();"/>
             <input id="simBtn3" type="button" value="Start the washer" onclick="simulateWasher();"/>
             <input id="simBtn4" type="button" value="Turn on the light" onclick="simulateLight();"/>

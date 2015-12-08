@@ -1,5 +1,5 @@
-var socket = io.connect('http://127.0.0.1:4200');
-//var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.com:4200');
+//var socket = io.connect('http://127.0.0.1:4200');
+var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.com:4200');
 
 // The timeout value has to be pulled from the database
 var cookTime = 3000;
@@ -14,11 +14,11 @@ socket.on('broad', function(data) {
     $('#simBtn1').prop('value', 'Start the microwave');
     $('#microwaveHiddenState').prop('value', 'microwave:start');
   } else if (data === 'microwave:start') {
-    $('#').prop('src', '/images/microwaveOn.jpg');
+    $('#microwaveImg').prop('src', '/images/microwaveOn.jpg');
     $('#simBtn1').prop('value', 'Stop the microwave');
     $('#microwaveHiddenState').prop('value', 'microwave:init');
 
-    setTimeout(simulate, cookTime);
+    setTimeout(simulateMicrowave, cookTime);
   } else if (data === 'fridge:egg') {
     // search the database and send the response to GlassHouse
   } else if (data === 'fridge:bacon') { 
@@ -40,7 +40,7 @@ socket.on('broad', function(data) {
     $('#simBtn5').prop('value', 'Stop the roomba');
     $('#irobotHiddenState').prop('value', 'roomba:stop');
     // For how long does iRobot run?
-    setTimeout(simulate, 3000); 
+    setTimeout(simulateIRobot, 3000); 
   } else if (data === 'washer:stop') { 
     $('#washerImg').prop('src', '/images/Washer.jpg');
     $('#simBtn3').prop('value', 'Start the washer');
@@ -51,27 +51,25 @@ socket.on('broad', function(data) {
     $('#washerHiddenState').prop('value', 'washer:stop');
 
     //For how long does washer run?
-    setTimeout(simulate, 10000);
+    setTimeout(simulateWasher, 10000);
   } else {
   }
 
   socket.emit('finish', 'Simulator state changed');
-
 });
 
+/*
 $('#simBtn1').on('click', function(e) {
   alert('in');
   var state = $('#microwaveHiddenState').val();
   socket.emit('simulate', state);
 });
+*/
 
-/*
 var simulateMicrowave = function() {
-  alert('in');
   var state = $('#microwaveHiddenState').val();
   socket.emit('simulate', state);
 };
-*/
 
 var simulateWasher = function() {
   var state = $('#washerHiddenState').val();
