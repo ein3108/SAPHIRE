@@ -1,10 +1,8 @@
 # SAPHIRE: Semantic semi-Autonomous Processing Household repertoIRE
 
+## [Project Webpage](http://weibellab-teaching.github.io/cse118-218-fa15_Team11/)
+
 ## Features
-
-* Natural Language Voice Command Interpreter (To be added in the next version)
-
-* API for Smart House Device Control & POC with Philips HUE (To be added in the next version)
 
 * Various Smart House Device Models & Visual Simulations
 
@@ -18,20 +16,26 @@
 
 * Connecting the iRobot to SAPHIRE
 
+* Real-time Connection between the Smart Devices
+
 * The SAPHIRE Server System and Visualization & Tracking of Household Resources (To be added in the next version)
 
+* Natural Language Voice Command Interpreter (To be added in the next version)
+
+* API for Smart House Device Control & POC with Philips HUE (To be added in the next version)
+
 ## Releases
-* [v 1.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of SAPHIRE includes a smart microwave model and a simple Google Glass App that understands pre-defined user voice commands
+* [v 1.0](https://github.com/WeibelLab-Teaching/cse118-218-fa15_Team11) - Initial version of SAPHIRE includes a smart microwave, a smart washer, and a smart refrigerator model and a simple Google Glass App that understands pre-defined user voice commands
 
 ## Dependencies and Reference guides
 
 * [Npm](http://www.npmjs.com/)
-* [Semantic UI](http://semantic-ui.com/)
+* [~~Semantic UI~~Bootstrap](http://getbootstrap.com/)
 * [MongoDB](https://www.mongodb.org/)
 * [node.js](https://nodejs.org/en/)
 * [Express](http://expressjs.com/)
 * [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
-* [Google Glass API](https://developers.google.com/glass/develop/gdk/voice)
+* [Google Glass SDK](https://developers.google.com/glass/develop/gdk/voice)
 
 
 ## Setup

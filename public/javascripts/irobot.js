@@ -27,10 +27,34 @@ var simulate = function() {
 };
 
 /* Modify the IP address accordingly */
-var HOST = 'http://192.168.7.2:';
-var PORT = 2224;
+//var HOST = 'http://192.168.7.2:';
+var HOST = 'ws://192.168.0.23:';
+var PORT = 2222;
 
 /* Connection to BeagleBone Black */
+function startIRobot() {
+  var socket = new WebSocket(HOST + PORT);
+  socket.onopen = function() {
+    socket.send('irobot:start');
+  };
+
+  socket.onclose = function() {
+    //alert('connection closed');
+  };
+};
+
+function stopIRobot() {
+  var socket = new WebSocket(HOST + PORT);
+  socket.onopen = function() {
+    socket.send('irobot:stop');
+  };
+
+  socket.onclose = function() {
+   // alert('connection closed');
+  };
+};
+
+/*
 function startIRobot() {
   var client = io.connect(HOST + PORT, 
       { forceNew: true }, function(data) {
@@ -66,3 +90,4 @@ function stopIRobot() {
     client.destroy();
   });
 };
+*/

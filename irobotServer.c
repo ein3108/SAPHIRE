@@ -204,7 +204,7 @@ int main(int argc, char *argv[])
   int serfd, serfd2, sockfd, newsockfd, portno, n, ser_n;
   socklen_t clilen;
   struct sockaddr_in serv_addr, cli_addr;
-  char buffer[256];
+  char buffer[4096];
   char *mbed = "/dev/ttyO2";
   char *irobot = "/dev/ttyO1"; /* UART1; RX P9_26, TX P9_24 */
 
@@ -255,18 +255,25 @@ int main(int argc, char *argv[])
   int arg[2];
   int distance_travelled = 0;
 	int stopped = 1;
+  char *ctpr;
 
   while(1) {
-    bzero(buffer,256);
+    bzero(buffer,4096);
     bzero(res, sizeof(char) * MAX_COMMAND);
-    n = read(newsockfd, buffer, 255);
+    n = read(newsockfd, buffer, 4096);
+    cptr = strstr(buffer, "\r\n\r\n");
+
+    if (cptr)
+      cptr += 4; /* move by 4 bytes to pass the \r\n\r\n sequence */
 
     if (n < 0) error("ERROR reading from socket");
 
     printf("RECV MSG: %s\n",buffer);
     if (buffer[0] == 'i') {
       /* iRobot command */
-      sscanf(buffer, "%c%c%c %d %d", &command[0], &command[1], &command[2], &arg[0], &arg[1]);
+      //sscanf(buffer, "%c%c%c %d %d", &command[0], &command[1], &command[2], &arg[0], &arg[1]);
+      sscanf(cptr, "%c%c%c %d %d", &command[0], &command[1], &command[2], &arg[0], &arg[1]);
+      
 
       printf("command[0]:%c, command[1]:%c, command[2]:%c, arg[0]:%d, arg[1]:%d\n", command[0], command[1], command[2], arg[0], arg[1]);
 
