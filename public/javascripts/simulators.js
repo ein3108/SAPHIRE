@@ -37,7 +37,7 @@ socket.on('broad', function(data) {
    // $('#simBtn4').prop('value', 'Turn on the light');
     $('#lightHiddenState').prop('value', 'light:start');
     socket.emit('finish', 'light:off');
-  } else if (data === 'light:start') { 
+  } else if (data === '\"light:start\"') { 
     $('#lightImg').prop('src', '/images/TableLampOn.jpg');
    // $('#simBtn4').prop('value', 'Turn off the light');
     $('#lightHiddenState').prop('value', 'light:stop');
@@ -47,19 +47,19 @@ socket.on('broad', function(data) {
    // $('#simBtn5').prop('value', 'Start the roomba');
     $('#irobotHiddenState').prop('value', 'roomba:start');
     socket.emit('finish', 'roomba:done');
-  } else if (data === 'roomba:start') { 
+  } else if (data === '\"roomba:start\"') { 
     $('#irobotImg').prop('src', '/images/irobotstart.gif');
    // $('#simBtn5').prop('value', 'Stop the roomba');
     $('#irobotHiddenState').prop('value', 'roomba:stop');
     // For how long does iRobot run?
     startIRobot();
     setTimeout(simulateIRobot, 10000); 
-  } else if (data === 'washer:stop') { 
+  } else if (data === '\"washer:stop\"') { 
     $('#washerImg').prop('src', '/images/Washer.jpg');
    // $('#simBtn3').prop('value', 'Start the washer');
     $('#washerHiddenState').prop('value', 'washer:start');
     socket.emit('finish', 'washer:done');
-  } else if (data === 'washer:start') { 
+  } else if (data === '\"washer:start\"') { 
     $('#washerImg').prop('src', '/images/washer.gif');
    // $('#simBtn3').prop('value', 'Start the washer');
     $('#washerHiddenState').prop('value', 'washer:stop');
