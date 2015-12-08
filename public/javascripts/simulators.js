@@ -1,5 +1,5 @@
-var socket = io.connect('http://127.0.0.1:4200');
-//var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.com:4200');
+//var socket = io.connect('http://127.0.0.1:4200');
+var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.com:4200');
 
 // The timeout value has to be pulled from the database
 var cookTime = 3000;
