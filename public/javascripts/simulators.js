@@ -2,7 +2,7 @@ var socket = io.connect('http://127.0.0.1:4200');
 //var socket = io.connect('http://ec2-52-25-254-206.us-west-2.compute.amazonaws.com:4200');
 
 // The timeout value has to be pulled from the database
-var cookTime;
+var cookTime = 3000;
 
 socket.on('connect', function(data) {
   socket.emit('join', 'simulators');
@@ -10,11 +10,11 @@ socket.on('connect', function(data) {
 
 socket.on('broad', function(data) {
   if (data === 'microwave:init') {
-    $('#').prop('src', '/images/microwaveoff.jpg');
+    $('#microwaveImg').prop('src', '/images/Microwave.jpg');
     $('#simBtn1').prop('value', 'Start the microwave');
     $('#microwaveHiddenState').prop('value', 'microwave:start');
   } else if (data === 'microwave:start') {
-    $('#').prop('src', '/images/microwaveon.jpg');
+    $('#').prop('src', '/images/microwaveOn.jpg');
     $('#simBtn1').prop('value', 'Stop the microwave');
     $('#microwaveHiddenState').prop('value', 'microwave:init');
 
@@ -24,29 +24,29 @@ socket.on('broad', function(data) {
   } else if (data === 'fridge:bacon') { 
     // search the database and send the response to GlassHouse
   } else if (data === 'light:stop') { 
-    $('#').prop('src', '/images/lampoff.jpg');
+    $('#lightImg').prop('src', '/images/TableLamp.jpg');
     $('#simBtn4').prop('value', 'Turn on the light');
     $('#lightHiddenState').prop('value', 'light:start');
   } else if (data === 'light:start') { 
-    $('#').prop('src', '/images/lampon.jpg');
+    $('#lightImg').prop('src', '/images/TableLampOn.jpg');
     $('#simBtn4').prop('value', 'Turn off the light');
     $('#lightHiddenState').prop('value', 'light:stop');
   } else if (data === 'roomba:stop') { 
-    $('#').prop('src', '/images/irobot.jpg');
+    $('#irobotImg').prop('src', '/images/Roomba.jpg');
     $('#simBtn5').prop('value', 'Start the roomba');
     $('#irobotHiddenState').prop('value', 'roomba:start');
   } else if (data === 'roomba:start') { 
-    $('#').prop('src', '/images/irobot.gif');
+    $('#irobotImg').prop('src', '/images/irobot.gif');
     $('#simBtn5').prop('value', 'Stop the roomba');
     $('#irobotHiddenState').prop('value', 'roomba:stop');
     // For how long does iRobot run?
     setTimeout(simulate, 3000); 
   } else if (data === 'washer:stop') { 
-    $('#').prop('src', '/images/washeroff.jpg');
+    $('#washerImg').prop('src', '/images/Washer.jpg');
     $('#simBtn3').prop('value', 'Start the washer');
     $('#washerHiddenState').prop('value', 'washer:start');
   } else if (data === 'washer:start') { 
-    $('#').prop('src', '/images/washer.gif');
+    $('#washerImg').prop('src', '/images/washer.gif');
     $('#simBtn3').prop('value', 'Start the washer');
     $('#washerHiddenState').prop('value', 'washer:stop');
 
@@ -59,9 +59,36 @@ socket.on('broad', function(data) {
 
 });
 
+$('#simBtn1').on('click', function(e) {
+  alert('in');
+  var state = $('#microwaveHiddenState').val();
+  socket.emit('simulate', state);
+});
 
-var simulate = function() {
-  var state = $('').val();
+/*
+var simulateMicrowave = function() {
+  alert('in');
+  var state = $('#microwaveHiddenState').val();
+  socket.emit('simulate', state);
+};
+*/
+
+var simulateWasher = function() {
+  var state = $('#washerHiddenState').val();
   socket.emit('simulate', state);
 };
 
+var simulateLight = function() {
+  var state = $('#lightHiddenState').val();
+  socket.emit('simulate', state);
+};
+
+var simulateRefrigerator = function() {
+  var state = $('#refrigeratorHiddenState').val();
+  socket.emit('simulate', state);
+};
+
+var simulateIRobot = function() {
+  var state = $('#irobotHiddenState').val();
+  socket.emit('simulate', state);
+};

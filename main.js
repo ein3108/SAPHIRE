@@ -8,7 +8,7 @@ var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('ec2-54-187-150-45.us-west-2.compute.amazonaws.com:27017/saphire');
 var index = require('./routes/index');
-var simulators = require('./routes/simulators');
+//var simulators = require('./routes/simulators');
 
 var app = express();
 
@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use('/', index);
-app.use('/simulators', simulators);
+//app.use('/simulators', simulators);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

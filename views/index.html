@@ -28,6 +28,26 @@
 </head>
 
 <body id="page-top">
+    <!-- simulators.js -->
+    <script src="javascripts/simulators.js"></script>
+
+    <!-- Socket.io -->
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+    <!-- jQuery -->
+    <script src="javascripts/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="javascripts/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="javascripts/jquery.easing.min.js"></script>
+    <script src="javascripts/jquery.fittext.js"></script>
+    <script src="javascripts/wow.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="javascripts/saphire.js"></script>
+
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -70,23 +90,35 @@
 		<div class="container">
 			<div class="row">
 				<div class="TOP">
-					<div class="col-sm-2 col-md-2 col-lg-2">
-						<img src="images/Microwave.jpg" class="img-responsive" alt="">
-					</div>
-					<div class="col-sm-2 col-md-2 col-lg-2">
-						<img src="images/Washer.jpg" class="img-responsive" alt="">
-					</div>
-					<div class="col-sm-2 col-md-2 col-lg-2">
-						<img src="images/Person.jpg" class="img-responsive" alt="">
-					</div>
-					<div class="col-sm-2 col-md-2 col-lg-2">
-						<img src="images/Refridgerator.jpg" class="img-responsive" alt="">
-					</div>
-					<div class="col-sm-2 col-md-2 col-lg-2">
+          <form>
+            <input id="microwaveHiddenState" type="hidden" value="microwave:start"/>
+            <input id="lightHiddenState" type="hidden" value="light:stop"/>
+            <input id="irobotHiddenState" type="hidden" value="roomba:stop"/>
+            <input id="washerHiddenState" type="hidden" value="washer:stop"/>
+            <input id="refrigeratorHiddenState" type="hidden" value="fridge:bacon"/>
+            <button type="button" class="btn btn-default" id="simBtn1" value="Start the microwave"/>
 
+            <input id="simBtn2" type="button" value="Search the refrigerator" onclick="simulateRefrigerator();"/>
+            <input id="simBtn3" type="button" value="Start the washer" onclick="simulateWasher();"/>
+            <input id="simBtn4" type="button" value="Turn on the light" onclick="simulateLight();"/>
+            <input id="simBtn5" type="button" value="Start the roomba" onclick="simulateIRobot();"/>
+          </form>
+					<div class="col-sm-2 col-md-2 col-lg-2">
+						<img id="microwaveImg" src="images/Microwave.jpg" class="img-responsive" alt=""/>
 					</div>
 					<div class="col-sm-2 col-md-2 col-lg-2">
-						<img src="images/TableLamp.jpg" class="img-responsive" alt="">
+						<img id="washerImg" src="images/Washer.jpg" class="img-responsive" alt=""/>
+					</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">
+						<img src="images/Person.jpg" class="img-responsive" alt=""/>
+					</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">
+						<img id="refrigeratorImg" src="images/Refridgerator.jpg" class="img-responsive" alt=""/>
+					</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">
+					</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">
+						<img id="lightImg" src="images/TableLamp.jpg" class="img-responsive" alt=""/>
 					</div>
 				</div>
 			</div>
@@ -101,44 +133,12 @@
 					<div class="col-sm-3 col-md-3 col-lg-3">
 					</div>
 					<div class="col-sm-2 col-md-2 col-lg-2">
-						<img src="images/Roomba.jpg" class="img-responsive" alt="">
+						<img id="irobotImg" src="images/Roomba.jpg" class="img-responsive" alt=""/>
 					</div>
 				</div>
 			</div>
-		</div>
-
-	<div class="container">
-
-    </section>
-
-    <section class="bg_microwave" id="microwave">
-
-    </section>
-
-    <section class="bg_washer" id="washer">
-       
-    </section>	
-	
-	<section class="bg_refridgerator" id="refridgerator">
-	
-	</section
-	
-
-    <!-- jQuery -->
-    <script src="javascripts/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="javascripts/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="javascripts/jquery.easing.min.js"></script>
-    <script src="javascripts/jquery.fittext.js"></script>
-    <script src="javascripts/wow.min.js"></script>
-
-
-    <!-- Custom Theme JavaScript -->
-    <script src="javascripts/saphire.js"></script>
-
+    </div>
+  </section>
 </body>
 
 </html>
