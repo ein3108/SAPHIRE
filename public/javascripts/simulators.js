@@ -44,8 +44,8 @@ socket.on('broad', function(data) {
     $('#simBtn5').prop('value', 'Start the roomba');
     $('#irobotHiddenState').prop('value', 'roomba:start');
     socket.emit('finish', 'Roomba finished cleaning');
-  } else if (data === '\"roomba:start\"') { 
-    $('#irobotImg').prop('src', '/images/irobot.gif');
+  } else if (data === 'roomba:start') { 
+    $('#irobotImg').prop('src', '/images/irobotstart.gif');
     $('#simBtn5').prop('value', 'Stop the roomba');
     $('#irobotHiddenState').prop('value', 'roomba:stop');
     // For how long does iRobot run?
