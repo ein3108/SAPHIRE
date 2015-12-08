@@ -14,6 +14,8 @@
 
 * Database Connection with MongoDb
 
+* Connecting the iRobot to SAPHIRE
+
 * Real-time Connection between the Smart Devices
 
 * The SAPHIRE Server System and Visualization & Tracking of Household Resources (To be added in the next version)
